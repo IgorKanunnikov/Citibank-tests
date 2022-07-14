@@ -23,7 +23,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-
+        sleep(5000);
         step("Click on Open an Account", () -> {
             $("#navOpenAccmainAnchor8").click();
         });
@@ -42,7 +42,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-
+        sleep(5000);
         step("Click on Espanol worldwide icon", () -> {
             $("#langBtn").click();
         });
@@ -61,7 +61,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-
+        sleep(5000);
         step("Click on Register new account", () -> {
             $(".col-xs-6.anchor-container").click();
         });
@@ -80,7 +80,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-
+        sleep(5000);
         step("Click on Activate new account", () -> {
             $(".col-xs-6.anchor-container", 1).click();
         });
@@ -99,7 +99,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-
+        sleep(5000);
         step("Click on Forgot User ID", () -> {
             $(".col-xs-6.readLine", 1).click();
         });
@@ -118,7 +118,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-
+        sleep(5000);
         step("Click on Forgot Password", () -> {
             $(".col-xs-6.readLine", 3).click();
         });
@@ -136,7 +136,7 @@ public class MainPageTests extends TestBase {
     void titleTest() {
         step("Open url 'https://www.citi.com/'", () ->
                 open("https://www.citi.com/"));
-
+        sleep(5000);
         step("Page title should have text 'Online Banking, Mortgages, Personal Loans, Investing | Citi.com'", () -> {
             String expectedTitle = "Online Banking, Mortgages, Personal Loans, Investing | Citi.com";
             String actualTitle = title();
