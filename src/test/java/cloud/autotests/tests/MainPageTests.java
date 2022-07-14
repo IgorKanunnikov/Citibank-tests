@@ -69,5 +69,43 @@ public class MainPageTests extends TestBase {
         });
     }
 
+    @Test
+    @Owner("IgorK")
+    @Description("Check forgot User ID")
+    @DisplayName("Citibank main page, forgot User ID")
+    @Tag("cititest")
+    void forgotuseridTest() {
+        step("Open https://www.citi.com/", () -> {
+            open("https://www.citi.com/");
+        });
+        sleep(5000);
+        step("Click on Forgot User ID", () -> {
+            $(".col-xs-6.readLine", 1).click();
+        });
+
+        step("Verifying Primary Account Holder’s information should be visible", () -> {
+            $(".ng-tns-c200-0").shouldHave(text("Select one of the following and use the Primary Account Holder’s information to finish verifying your identity."));
+        });
+    }
+
+    @Test
+    @Owner("IgorK")
+    @Description("Check forgot Password")
+    @DisplayName("Citibank main page, forgot Password")
+    @Tag("cititest")
+    void forgotpasswordTest() {
+        step("Open https://www.citi.com/", () -> {
+            open("https://www.citi.com/");
+        });
+        sleep(5000);
+        step("Click on Forgot Password", () -> {
+            $(".col-xs-6.readLine", 3).click();
+        });
+
+        step("Verifying Primary Account Holder’s information should be visible", () -> {
+            $("#maincontent").shouldHave(text("Select one of the following and use the Primary Account Holder’s information to finish verifying your identity."));
+        });
+    }
+
 
 }
