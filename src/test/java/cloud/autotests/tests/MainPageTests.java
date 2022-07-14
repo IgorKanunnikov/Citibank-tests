@@ -51,4 +51,41 @@ public class MainPageTests extends TestBase {
             $(".modal-body").shouldHave(text("Important Information"));
         });
     }
+    @Test
+    @Owner("IgorK")
+    @Description("Check reg account")
+    @DisplayName("Citibank main page, register account")
+    @Tag("cititest")
+    void registerTest() {
+        step("Open https://www.citi.com/", () -> {
+            open("https://www.citi.com/");
+        });
+        sleep(5000);
+        step("Click on Register new account", () -> {
+            $(".col-xs-6.anchor-container").click();
+        });
+
+        step("Setup access should be visible", () -> {
+            $("#maincontent").shouldHave(text("You can view or manage your account online in just a few easy steps. Let’s get started!"));
+        });
+    }
+
+    @Test
+    @Owner("IgorK")
+    @Description("Check activate new account")
+    @DisplayName("Citibank main page, activate account")
+    @Tag("cititest")
+    void activateTest() {
+        step("Open https://www.citi.com/", () -> {
+            open("https://www.citi.com/");
+        });
+        sleep(5000);
+        step("Click on Activate new account", () -> {
+            $(".col-xs-6.anchor-container", 1).click();
+        });
+
+        step("Activating card should be visible", () -> {
+            $(".ng-tns-c200-0").shouldHave(text("Activating your card is easy. Fill in the information below to get started"));
+        });
+    }
 }
