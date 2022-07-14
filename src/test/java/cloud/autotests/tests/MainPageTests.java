@@ -15,18 +15,22 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MainPageTests extends TestBase {
 
-    @Tag("cititest")
     @Test
-    @DisplayName("Page title should have header text")
-    void titleTest() {
-        step("Open url 'https://habr.com/'", () ->
-                open("https://habr.com/"));
+    @Owner("IgorK")
+    @Description("Check forgot Password")
+    @DisplayName("Citibank main page, forgot Password")
+    @Tag("cititest")
+    void forgotpasswordTest() {
+        step("Open https://www.citi.com/", () -> {
+            open("https://www.citi.com/");
+        });
+        sleep(5000);
+        step("Click on Forgot Password", () -> {
+            $(".col-xs-6.readLine", 3).click();
+        });
 
-        step("Page title should have text 'All posts in a row / Habr'", () -> {
-            String expectedTitle = "All posts in a row / Habr";
-            String actualTitle = title();
-
-            assertThat(actualTitle).isEqualTo(expectedTitle);
+        step("Verifying Primary Account Holder’s information should be visible", () -> {
+            $("#maincontent").shouldHave(text("Select one of the following and use the Primary Account Holder’s information to finish verifying your identity."));
         });
     }
 }
