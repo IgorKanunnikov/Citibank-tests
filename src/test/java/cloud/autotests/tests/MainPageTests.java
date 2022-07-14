@@ -14,23 +14,41 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class MainPageTests extends TestBase {
-
     @Test
     @Owner("IgorK")
-    @Description("Check forgot Password")
-    @DisplayName("Citibank main page, forgot Password")
+    @Description("Open new account, check where do you live should be visible")
+    @DisplayName("Citibank main page, open new account, zip code question")
     @Tag("cititest")
-    void forgotpasswordTest() {
+    void zipcodeTest() {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
         sleep(5000);
-        step("Click on Forgot Password", () -> {
-            $(".col-xs-6.readLine", 3).click();
+        step("Click on Open an Account", () -> {
+            $("#navOpenAccmainAnchor8").click();
         });
 
-        step("Verifying Primary Account Holder’s information should be visible", () -> {
-            $("#maincontent").shouldHave(text("Select one of the following and use the Primary Account Holder’s information to finish verifying your identity."));
+        step("Where Do You Live? should be visible", () -> {
+            $(".zipcode-h2").shouldHave(text("Where Do You Live?"));
+        });
+    }
+
+    @Test
+    @Owner("IgorK")
+    @Description("Check eng language communication")
+    @DisplayName("Citibank main page, Important Information eng language")
+    @Tag("cititest")
+    void languageTest() {
+        step("Open https://www.citi.com/", () -> {
+            open("https://www.citi.com/");
+        });
+        sleep(5000);
+        step("Click on Espanol worldwide icon", () -> {
+            $("#langBtn").click();
+        });
+
+        step("Important Information should be visible", () -> {
+            $(".modal-body").shouldHave(text("Important Information"));
         });
     }
 }
