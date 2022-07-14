@@ -23,7 +23,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-        sleep(5000);
+        sleep(10000);
         step("Click on Open an Account", () -> {
             $("#navOpenAccmainAnchor8").click();
         });
@@ -42,7 +42,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-        sleep(5000);
+        sleep(10000);
         step("Click on Espanol worldwide icon", () -> {
             $("#langBtn").click();
         });
@@ -60,7 +60,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-        sleep(5000);
+        sleep(10000);
         step("Click on Register new account", () -> {
             $(".col-xs-6.anchor-container").click();
         });
@@ -79,7 +79,7 @@ public class MainPageTests extends TestBase {
         step("Open https://www.citi.com/", () -> {
             open("https://www.citi.com/");
         });
-        sleep(5000);
+        sleep(10000);
         step("Click on Activate new account", () -> {
             $(".col-xs-6.anchor-container", 1).click();
         });
